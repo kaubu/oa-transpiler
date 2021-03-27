@@ -1,34 +1,18 @@
-; v1.1.x or above
+; v1.2.0 or above
 io nlout "Welcome!"
 
-io out "Please"
-io out SPACE
-io out "enter"
-io out SPACE
-io out "your"
-io out SPACE
-io out "base:"
-io out SPACE
-
+io out "Please enter your base: "
 io in in_base
 dconv in_base base
 
-io out "Please"
-io out SPACE
-io out "enter"
-io out SPACE
-io out "your"
-io out SPACE
-io out "exponent:"
-io out SPACE
-
+io out "Please enter your exponent: "
 io in in_exp
 dconv in_exp exp
 
 def result
-; base^exp, which is then stored in result
-dpow base exp
+dpow base exp ; base^exp, which is then stored in result
 
-io out "Result:"
-io out SPACE
+io out "Result: "
 io nlout result
+
+; io nlout "Result: " << result ; This is a hacky way of doing it, which will input itself into the C++ code
