@@ -1,0 +1,34 @@
+; v1.1.x or above
+io nlout "Welcome!"
+
+io out "Please"
+io out SPACE
+io out "enter"
+io out SPACE
+io out "your"
+io out SPACE
+io out "base:"
+io out SPACE
+
+io in in_base
+dconv in_base base
+
+io out "Please"
+io out SPACE
+io out "enter"
+io out SPACE
+io out "your"
+io out SPACE
+io out "exponent:"
+io out SPACE
+
+io in in_exp
+dconv in_exp exp
+
+def result
+; base^exp, which is then stored in result
+dpow base exp
+
+io out "Result:"
+io out SPACE
+io nlout result
