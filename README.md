@@ -1,4 +1,4 @@
-# OAT v1.1.1
+# OAT v1.2.0
 ## Command-line arguments
 `[OAT Executable] [anyfile.oa] [c/nc - compile/nocompile]`  
 For the compile option you require g++.  
