@@ -11,9 +11,7 @@ def par3
 dpow -0.6180339 number ; -0.6180339^n
 
 sub par2 par3 ; (1.6180339^n) - (-0.6180339^n)
-
 div par2 2.236067977 ; ((1.6180339^n) - (-0.6180339^n)) / 2.236067977
-
 
 round par2 result ; Round the result
 
