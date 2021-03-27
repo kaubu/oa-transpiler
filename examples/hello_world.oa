@@ -1,4 +1,1 @@
-strdec a "Hello"
-add a SPACE
-cat a "World!"
-io nlout a
+io nlout "Hello World!" ; v1.2.0 and above
