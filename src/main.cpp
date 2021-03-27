@@ -59,12 +59,14 @@ int main(int argc, char **argv)
 
 		if (!(iss >> a >> b >> c)) {
 			if ((a == ";") || (a == "\n") || (a == "")) { continue; } // Comment/newline, don't do anything
-			std::cout << "ERROR\n";
-			break;
+			// std::cout << "ERROR\n"; This errors if a b and c aren't filled, which is fine.
+			// break;
 		} // Error
 
 		sourceFile += constants::INDENTATION;
 		c = OAT::process_c(c);
+
+		sourceFile = OAT::declare_function(a) + sourceFile;
 		sourceFile += OAT::process_line(a, b, c, &includes);
 	}
 
