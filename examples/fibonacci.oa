@@ -1,0 +1,50 @@
+; OAT v1.1.x or above
+; Initial input
+strdec imsg "What"
+cat imsg SPACE
+cat imsg "number"
+cat imsg SPACE
+cat imsg "of"
+cat imsg SPACE
+cat imsg "fibonacci"
+cat imsg SPACE
+cat imsg "would"
+cat imsg SPACE
+cat imsg "you"
+cat imsg SPACE
+cat imsg "like"
+cat imsg SPACE
+cat imsg "to"
+cat imsg SPACE
+cat imsg "go"
+cat imsg SPACE
+cat imsg "to?"
+cat imsg NEWLINE
+cat imsg ">>"
+cat imsg SPACE
+
+; Print out the message
+io out imsg
+
+; Get number
+io in str_num
+; Convert str_num to a double
+dconv str_num number
+
+; 1.6180339^n
+def par2
+dpow 1.6180339 number
+
+; -0.6180339^n
+def par3
+dpow -0.6180339 number
+
+; (1.6180339^n) - (-0.6180339^n)
+sub par2 par3
+; ((1.6180339^n) - (-0.6180339^n)) / 2.236067977
+div par2 2.236067977
+
+; Round the result
+round par2 result
+
+io nlout result
