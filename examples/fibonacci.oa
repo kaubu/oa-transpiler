@@ -1,26 +1,20 @@
 ; OAT v1.2.0 or above
-; Initial input
-io out "What number of fibonacci would you like to go to?\n>> "
+io out "What number of fibonacci would you like to go to?\n>> " ; Initial input
 
-; Get number
-io in str_num
-; Convert str_num to a double
-dconv str_num number
+io in str_num ; Get number
+dconv str_num number ; Convert str_num to a double
 
-; 1.6180339^n
 def par2
-dpow 1.6180339 number
+dpow 1.6180339 number ; 1.6180339^n
 
-; -0.6180339^n
 def par3
-dpow -0.6180339 number
+dpow -0.6180339 number ; -0.6180339^n
 
-; (1.6180339^n) - (-0.6180339^n)
-sub par2 par3
-; ((1.6180339^n) - (-0.6180339^n)) / 2.236067977
-div par2 2.236067977
+sub par2 par3 ; (1.6180339^n) - (-0.6180339^n)
 
-; Round the result
-round par2 result
+div par2 2.236067977 ; ((1.6180339^n) - (-0.6180339^n)) / 2.236067977
 
-io nlout result
+
+round par2 result ; Round the result
+
+io nlout result ; Display the result
