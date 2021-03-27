@@ -53,11 +53,15 @@ string OAT::io(string mode, string var)
 
 string OAT::process_c(string c)
 {
-	if (c == "NEWLINE") { return constants::NEWLINE_CHARACTER; }
-	else if (c == "SPACE") { return constants::SPACE; }
-	else if (c == "TRUE") { return constants::TRUE; }
-	else if (c == "FALSE") { return constants::FALSE; }
-	else { return c; };
+	// Remove ; and anything past it
+
+	string cut_c{ c.substr(0, c.find(";", 0)) };
+
+	if (cut_c == "NEWLINE") { return constants::NEWLINE_CHARACTER; }
+	else if (cut_c == "SPACE") { return constants::SPACE; }
+	else if (cut_c == "TRUE") { return constants::TRUE; }
+	else if (cut_c == "FALSE") { return constants::FALSE; }
+	else { return cut_c; };
 }
 
 string OAT::process_line(string a, string b, string c, IncludesVector *include_vector)

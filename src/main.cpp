@@ -57,14 +57,13 @@ int main(int argc, char **argv)
 		string b{};
 		string c{};
 
-		if (!(iss >> a >> b >> c)) {
-			if ((a == ";") || (a == "\n") || (a == "")) { continue; } // Comment/newline, don't do anything
-			// std::cout << "ERROR\n"; This errors if a b and c aren't filled, which is fine.
-			// break;
-		} // Error
+		iss >> a >> b;
+		std::getline(iss, c); // With this, you can have spaces now. E.g. io nlout "Hello World!"
+
+		if ((a == ";") || (a == "\n") || (a == "")) { continue; } // Comment/newline, don't do anything
 
 		sourceFile += constants::INDENTATION;
-		c = OAT::process_c(c);
+		c = OAT::process_c(c); // I need to process C so that it cuts off anything past a comment ;
 
 		sourceFile = OAT::declare_function(a) + sourceFile;
 		sourceFile += OAT::process_line(a, b, c, &includes);
