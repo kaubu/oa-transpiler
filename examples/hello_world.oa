@@ -1,0 +1,4 @@
+strdec a "Hello"
+add a SPACE
+cat a "World!"
+io nlout a
