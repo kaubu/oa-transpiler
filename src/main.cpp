@@ -43,8 +43,6 @@ int main(int argc, char **argv)
 	else if (compileVar == "nc") { compileOption = false; }
 	else { displayHelpMessage(); } // Exits automatically
 
-	// Find a way to automatically #include headers
-
 	string sourceFile{};
 	sourceFile += constants::FIRST_MAIN;
 
@@ -80,18 +78,15 @@ int main(int argc, char **argv)
 	std::sort( includes.begin(), includes.end() );
 	includes.erase( unique( includes.begin(), includes.end() ), includes.end() );
 
-	// Append heads to eachother in a string
+	// Append headers to eachother in a string
 	string includesString{};
 	for (size_t i = 0; i < includes.size(); ++i)
 	{
 		includesString += includes[i];
 	}
 
-	string fullSource{ includesString += sourceFile };
+	string fullSource{ includesString + sourceFile };
 
-	// Eventually check if config.delete cpp is true, delete it
-	// std::cout << "Source:\n" + fullSource + '\n';
-	
 	// Write to file
 	std::ofstream out(cppFile);
 	out << fullSource;

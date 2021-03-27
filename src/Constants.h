@@ -8,7 +8,7 @@ using std::string;
 namespace constants
 {
 	// Config
-	static const bool DELETE_CPP_FILE{ false }; // false for debug, true for release
+	static const bool DELETE_CPP_FILE{ true }; // false for debug, true for release
 
 	// Transpiler
 	static const string FIRST_MAIN{ "int main()\n{\n" };
